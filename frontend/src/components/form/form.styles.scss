@@ -1,0 +1,86 @@
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 1rem;
+    }
+
+    textarea {
+        font-family: 'poppins';
+        font-weight: lighter;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: var(--border-radius);
+        outline: 3px solid transparent;
+        padding: 0.5rem 1rem;
+        width: 300px;
+        transition: var(--transition);
+        resize: none;
+
+        &:focus {
+            border-color: transparent;
+            outline: 3px solid var(--color-primary-light);
+        }
+    }
+}
+
+.input {
+    border: 1px solid white !important;
+    background-color: transparent;
+    font-family: 'poppins';
+    font-weight: lighter;
+
+    &:focus {
+        border-color: transparent !important;
+    }
+
+}
+
+.input {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    width: 300px;
+    outline: 3px solid transparent !important;
+    text-align: center;
+    transition: var(--transition);
+
+
+    &:focus {
+        outline: 3px solid var(--color-primary-light) !important;
+
+    }
+}
+
+.btn-submit {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    outline: 3px solid transparent !important;
+    text-align: center;
+    transition: var(--transition);
+
+    cursor: pointer;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    width: 334px !important;
+    background-color: var(--color-primary);
+    color: white;
+
+    &:focus {
+        outline: none;
+        background-color: var(--color-primary-dark);
+    }
+}
+
+.mt-2 {
+    margin-top: 1.5rem;
+}
+
+.dropdown {
+    text-align: left !important;
+    color: black !important;
+
+}

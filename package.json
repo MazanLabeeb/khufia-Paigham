@@ -8,12 +8,13 @@
   "private": false,
   "dependencies": {
     "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.18.4"
   },
   "scripts": {
-    "start": "node backend/server",
+    "start": "node index",
     "express": "nodemon index",
     "whatsapp": "node utils/sendMessage.utils.js ",
     "dev": "concurrently \"npm run express\" \"npm run whatsapp\" "

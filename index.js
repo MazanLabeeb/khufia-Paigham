@@ -1,6 +1,8 @@
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const express = require("express");
+const path = require("path");
+require("dotenv").config();
 const app = new express();
 
 var botIsReady = false;
@@ -38,8 +40,16 @@ app.post('/api/sendmessage', async (req, res) => {
 
     if (!botIsReady) return res.json({ error: "Bot is offline" });
 
-    let to = req.body.to;
+    let to = "+" + req.body.to;
     let message = req.body.message;
+
+    message += `
+
+
+_🚀 This message was send by an Anonymous Guy._
+
+✈ Visit *${process.env.WEBSITE_URI}* to text Anonymously.
+`;
 
     const chatId = to.substring(1) + "@c.us";
 
@@ -55,6 +65,13 @@ app.post('/api/sendmessage', async (req, res) => {
             res.json({ error })
         });
     }
+})
+
+
+app.use(express.static(path.join(__dirname, "frontend", "build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 })
 
 
