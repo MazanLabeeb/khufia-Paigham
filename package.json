@@ -1,0 +1,9 @@
+{
+  "name": "khufia-paigham",
+  "version": "1.0.0",
+  "description": "Send Whatsapp Messages Anonymously",
+  "main": "server.js",
+  "author": "Mazan Labeeb",
+  "license": "MIT",
+  "private": false
+}
