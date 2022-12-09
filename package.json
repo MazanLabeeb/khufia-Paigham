@@ -16,7 +16,14 @@
   "scripts": {
     "start": "node index",
     "express": "nodemon index",
-    "whatsapp": "node utils/sendMessage.utils.js ",
-    "dev": "concurrently \"npm run express\" \"npm run whatsapp\" "
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run express\" \"npm run frontend\" "
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "frontend/*",
+      ".wwebjs_auth",
+      "node_modules"
+    ]
   }
 }

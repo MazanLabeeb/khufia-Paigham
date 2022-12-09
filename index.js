@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post('/api/sendmessage', async (req, res) => {
 
-    if (!botIsReady) return res.json({ error: "Bot is offline" });
+    if (!botIsReady) return res.status(500).json({ error: "Bot is offline" });
 
     let to = "+" + req.body.to;
     let message = req.body.message;
@@ -46,9 +46,9 @@ app.post('/api/sendmessage', async (req, res) => {
     message += `
 
 
-_🚀 This message was send by an Anonymous Guy._
+_🚀 This message was send by an Anonymous Person._
 
-✈ Visit *${process.env.WEBSITE_URI}* to text Anonymously.
+🎉 _Visit *${process.env.WEBSITE_URI}* to text Anonymously._
 `;
 
     const chatId = to.substring(1) + "@c.us";

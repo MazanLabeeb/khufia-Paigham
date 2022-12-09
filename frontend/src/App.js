@@ -1,16 +1,16 @@
 import './App.css';
 import Form from './components/form/form.component';
-import { BsGithub } from 'react-icons/bs';
+import Social from './components/social/social.component';
 
 function App() {
-  
+
   return (
     <div className="App">
       <header className="App-header">
         <h1 className='text-gradient'>خفیہ پیغام</h1>
         <Form />
 
-        <BsGithub className='GitHub' onClick={()=> window.open("https://github.com/mazanlabeeb", "_blank")} />
+        <Social />
       </header>
     </div>
   );

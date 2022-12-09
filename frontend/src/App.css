@@ -20,17 +20,3 @@
   justify-content: center;
   color: white;
 }
-
-.GitHub{
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 3rem;
-  color: var(--color-secondary);
-  cursor: pointer;
-  
-}
-
-.GitHub:hover{
-  opacity: 0.6;
-}

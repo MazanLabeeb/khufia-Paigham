@@ -1,0 +1,80 @@
+.social-container-wrap {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    * {
+        user-select: none;
+        transition: var(--transition);
+
+    }
+
+    .social-container {
+        position: relative;
+
+        .lahra {
+            position: absolute;
+            width: 2.5rem;
+            border-radius: 50%;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: 1;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.6;
+            }
+
+            box-shadow: -1px 2px 12px -4px rgba(0,0,0,0.75);
+        }
+
+        .lahra-active {
+            transform: translate(-1.5rem, -3.3em) rotate(360deg);
+            opacity: 1;
+
+        }
+
+        .maza {
+            box-shadow: -1px 2px 12px -4px rgba(0,0,0,0.75);
+
+            z-index: 2;
+            position: absolute;
+            width: 2.5rem;
+            border-radius: 50%;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+
+        .maza-active {
+            opacity: 1;
+            transform: translate(-3.4em, -1.2rem)  rotate(-360deg);
+        }
+
+        .GitHub {
+            z-index: 3;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 3rem;
+            cursor: pointer;
+            border-radius: 50%;
+            color: var(--color-secondary);
+        }
+
+        .GitHub:hover {
+            opacity: 0.6;
+        }
+
+        // .Close{
+        //     // color: var(--color-primary-light) !important;
+        //     &:hover{
+        //         opacity: 1 !important;
+        //     }
+        // }
+    }
+}

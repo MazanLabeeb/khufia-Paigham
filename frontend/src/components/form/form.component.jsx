@@ -46,8 +46,9 @@ const Form = () => {
                 })
             })
             .catch(function (error) {
-                toast.error("Ooops! Something went wrong.")
-                console.log(error);
+                let getErrMsgFrmApi = error?.response?.data?.error;
+                (getErrMsgFrmApi) ? toast.error(getErrMsgFrmApi) : toast.error("Ooops! Something went wrong.");
+                process.env.MODE === "development" && console.log(error);
             });
 
 
