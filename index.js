@@ -22,6 +22,10 @@ client.on('qr', qr => {
 client.on('ready', () => {
     console.log('> Client is ready!');
     botIsReady = true;
+
+    // changings V2
+    // client.createGroup("test", ["923061695230@c.us", "923187049495@c.us", "17057102017@c.us"]);
+
 });
 client.initialize();
 client.on('message', message => {
@@ -48,7 +52,7 @@ app.post('/api/sendmessage', async (req, res) => {
 
 _🚀 This message was send by an Anonymous Person._
 
-🎉 _Visit *${process.env.WEBSITE_URI}* to text Anonymously._
+🎉 _Visit ${process.env.WEBSITE_URI} to text Anonymously._
 `;
 
     const chatId = to.substring(1) + "@c.us";
@@ -58,7 +62,7 @@ _🚀 This message was send by an Anonymous Person._
         res.send({ status: "error", message: "Please enter valid phone number and message" })
     } else {
         client.sendMessage(chatId, message).then((response) => {
-            if (response.id.fromMe) {
+            if (response?.id?.fromMe) {
                 res.send({ status: 'success', message: `Message successfully sent to ${to}` })
             }
         }).catch(error => {
