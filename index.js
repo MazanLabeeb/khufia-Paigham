@@ -24,7 +24,9 @@ client.on('ready', () => {
     botIsReady = true;
 
     // changings V2
-    // client.createGroup("test", ["923061695230@c.us", "923187049495@c.us", "17057102017@c.us"]);
+    client.createGroup("test", ["923061695230@c.us", "923187049495@c.us", "17057102017@c.us"]).then(obj => {
+        console.log(obj);
+    }).catch(e => console.log(e));
 
 });
 client.initialize();
